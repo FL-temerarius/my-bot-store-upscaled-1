@@ -56,13 +56,13 @@
     .product-title::before {
       content: '✨'; /* Анимированный эмоджи */
       margin-right: 8px;
-      animation: emoji-spin 2s linear infinite; /* Анимация вращения */
+      animation: emoji-spin 2s linear infinite; /* Анимация вращения - 360 */
     }
 
     .product-title::after {
-      content: '♦️👇'; /* Анимированный эмоджи */
+      content: '🔶👇'; /* Анимированный эмоджи */
       margin-right: 8px;
-      animation: rotate 4s linear infinite; /* Анимация вращения */
+      animation: rotate 4s linear infinite; /* Анимация вращения - 90 */
     }
 
     @keyframes emoji-spin {
@@ -78,6 +78,7 @@
     .product-description {
       margin-bottom: 15px;
       color: #495057;
+      text-align: center;
     }
 
     /* Стили кнопки "Подробнее" */
@@ -141,14 +142,14 @@
       background-color: #f0ad4e; /* Оранжевый цвет */
       color: #fff;
       border: none;
-      padding: 10px 35px;
+      padding: 10px 50px;
       border-radius: 5px;
       font-size: 1em;
       cursor: pointer;
       transition: background-color 0.3s ease;
       display: block;
       margin: 20px auto;
-      width: 200px;
+      width: 250px;
       text-align: center;
     }
 
@@ -175,11 +176,11 @@
 <body>
 
   <h1>Ваш Фокус ➡️ Стратегия и Развитие</h1>
-  <h3>Мои умные таблицы, боты и AI-агенты уже работают на вас и на ваши высокие цели!</h3>
+  <h3>Мои умные таблицы, боты и AI-агенты уже сейчас работают на вас и на ваши высокие цели!</h3>
   
-  <button class="toggle-all-btn" id="toggle-all">Показать/свернуть все</button>
+  <button class="toggle-all-btn" id="toggle-all">Показать все/Свернуть</button>
   
-  <h3><i>Выберите свой вариант или комбинацию и получите личное предложение по промокоду, пока действует акция!</i></h3>
+  <h3><i>Выберите свой вариант или комбинацию и получите консультацию и личное предложение по промокоду, пока действует акция!</i></h3>
 
   
   <div class="product" id="product1">
@@ -329,7 +330,7 @@
 
   <div class="product" id="product13">
     <div class="product-title">⚠️ Бот-Бухгалтер - Анализ финансов в Telegram: Простой и удобный учет приходов/расходов - всегда под рукой!</div>
-    <p class="product-description">- Telegram бот + Google таблица</p>
+    <p class="product-description">- Telegram бот + Google таблица -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
       <p><strong>Как работает:</strong> Простой в обращении, но эффективный бот - записная книжка для учета доходов и расходов. Вы забрасываете в бот сумму и имя контрагениа - а она уже в таблице! В нужной колонке. Баланс и итоги за месяц можно поверить моментально.</p>
@@ -353,7 +354,7 @@
 
   <div class="product" id="product15">
     <div class="product-title">⚠️ Остались вопросы? </div>
-    <p class="product-description">Пишите или приходите на Консультацию</p>
+    <p class="product-description">- Пишите или приходите на Консультацию -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
       <p><strong>Напишите мне напрямую:</strong> <br>Я отвечу на все ваши вопросы и мы придумаем для вас что-нибудь особенное! Нажмите на кнопку ниже, чтобы перейти в бот-ассистент для прямой связи со мной и для продолжения диалога.</p>
@@ -395,7 +396,7 @@
   });
 
     // Обработчик для кнопки "Свернуть/Развернуть все"
-   / Toggle-all logic (updates all, then updates text)
+   // Toggle-all logic (updates all, then updates text)
   document.querySelectorAll('.toggle-all-btn').forEach(toggleAllBtn => {
     toggleAllBtn.addEventListener('click', () => {
       const products = document.querySelectorAll('.product');
@@ -420,21 +421,55 @@
     });
   });
 
+          /*// Обработчик для кнопки "Свернуть/Развернуть все" - попроще, без проверки на  1-2 закрытых пункта
+              document.querySelectorAll('.toggle-all-btn').forEach(toggleAllBtn => {
+            toggleAllBtn.addEventListener('click', () => {
+              const products = document.querySelectorAll('.product');
+              products.forEach(product => {
+                const details = product.querySelector('.details');
+                const toggleButton = product.querySelector('.toggle-details-btn');
+                if (details.style.display === 'none') {
+                  details.style.display = 'block';
+                  toggleButton.textContent = 'Скрыть';
+                } else {
+                  details.style.display = 'none';
+                  toggleButton.textContent = 'Подробнее';
+                }
+              });
+            });
+          });
+          */
+
     
     //Order btn
     document.querySelectorAll('.order-btn').forEach(button => {
-      button.addEventListener('click', () => {
+      button.addEventListener('click', async () => {
         const productDiv = button.closest('.product');
-        const promoCode = productDiv.querySelector('p:nth-child(3)').textContent.replace(/.*: /, '').trim(); // Извлекаем промокод
+        const promoCode = productDiv.querySelector('.details p:nth-child(3)').textContent.replace(/.*: /, '').trim(); // Извлекаем промокод
+        try {
+        // Here, instead of calling the bot via API, I give the client a referral link to it (and the bot script already contains a proper reaction to it):
         window.location.href = "https://t.me/privetDasha_bot?start=" + encodeURIComponent(promoCode);
+           } catch (error) {
+        statusDiv.style.color = 'red';
+        statusDiv.textContent = 'Ошибка отправки запроса. Перейдите в бот @privetDasha_bot в Telegram для решения вашего вопроса.';
+       }
       });
     });
-
+          /*//Another ver for Order btn
+          document.querySelectorAll('.order-btn').forEach(button => {
+            button.addEventListener('click', () => {
+              const productDiv = button.closest('.product');
+              // Find the p that contains "Промокод"
+              const promoCodeP = Array.from(productDiv.querySelectorAll('p')).find(p => p.textContent.includes('Промокод'));
+              const promoCode = promoCodeP ? promoCodeP.textContent.replace(/.*: /, '').trim() : '';
+              window.location.href = "https://t.me/privetDasha_bot?start=" + encodeURIComponent(promoCode);
+            });
+          });*/
 
   // Initialize button text on load
  /* updateToggleAllButtonText();*/
+    //});
     
-    });
   </script>
 
 </body>
