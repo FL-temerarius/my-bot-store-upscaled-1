@@ -60,7 +60,7 @@
     }
 
     .product-title::after {
-      content: '👇👇👇'; /* Анимированный эмоджи */
+      content: '♦️👇'; /* Анимированный эмоджи */
       margin-right: 8px;
       animation: rotate 4s linear infinite; /* Анимация вращения */
     }
@@ -141,7 +141,7 @@
       background-color: #f0ad4e; /* Оранжевый цвет */
       color: #fff;
       border: none;
-      padding: 10px 25px;
+      padding: 10px 35px;
       border-radius: 5px;
       font-size: 1em;
       cursor: pointer;
@@ -177,7 +177,7 @@
   <h1>Ваш Фокус ➡️ Стратегия и Развитие</h1>
   <h3>Мои умные таблицы, боты и AI-агенты уже работают на вас и на ваши высокие цели!</h3>
   
-  <button class="toggle-all-btn" id="toggle-all">Показать все</button>
+  <button class="toggle-all-btn" id="toggle-all">Показать/свернуть все</button>
   
   <h3><i>Выберите свой вариант или комбинацию и получите личное предложение по промокоду, пока действует акция!</i></h3>
 
@@ -365,7 +365,7 @@
 
   <script>
 
-    // Helper function to update the "toggle all" button text
+   /* // Helper function to update the "toggle all" button text
   function updateToggleAllButtonText() {
     const products = document.querySelectorAll('.product');
     const areAllOpen = Array.from(products).every(product => {
@@ -376,7 +376,7 @@
     document.querySelectorAll('.toggle-all-btn').forEach(btn => {
       btn.textContent = areAllOpen ? 'Свернуть все' : 'Показать все';
     });
-  }
+  }*/
 
   // Toggle details for individual product
   document.querySelectorAll('.toggle-details-btn').forEach(button => {
@@ -390,7 +390,7 @@
         details.style.display = 'block';
         button.textContent = 'Скрыть';
       }
-      updateToggleAllButtonText(); // Update the toggle-all button text after individual toggle
+      //updateToggleAllButtonText(); // Update the toggle-all button text after individual toggle
     });
   });
 
@@ -416,7 +416,7 @@
           toggleButton.textContent = 'Подробнее';
         }
       });
-      updateToggleAllButtonText(); // Update button label after toggling all
+      //updateToggleAllButtonText(); // Update button label after toggling all
     });
   });
 
@@ -432,7 +432,7 @@
 
 
   // Initialize button text on load
-  updateToggleAllButtonText();
+ /* updateToggleAllButtonText();*/
     
     });
   </script>
