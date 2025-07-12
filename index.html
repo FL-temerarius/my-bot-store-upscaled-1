@@ -353,10 +353,10 @@
 
   <div class="product" id="product15">
     <div class="product-title">⚠️ Остались вопросы? </div>
-    <p class="product-description"></p>
+    <p class="product-description">Пишите или приходите на Консультацию</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
-      <p><strong>Напишите мне:</strong> <br>Я отвечу на все ваши вопросы и мы придумаем для вас что-нибудь особенное! Нажмите на кнопку ниже, чтобы перейти в бот-ассистент для прямой связи со мной и для продолжения диалога.</p>
+      <p><strong>Напишите мне напрямую:</strong> <br>Я отвечу на все ваши вопросы и мы придумаем для вас что-нибудь особенное! Нажмите на кнопку ниже, чтобы перейти в бот-ассистент для прямой связи со мной и для продолжения диалога.</p>
       <p><strong>Промокод: </strong>QUESTION</p>
       <button class="order-btn">Задать вопрос</button>
       <div class="order-status"></div>
@@ -364,20 +364,6 @@
   </div>
 
   <script>
-    document.querySelectorAll('.toggle-details-btn').forEach(button => {
-      button.addEventListener('click', () => {
-        const productDiv = button.closest('.product');
-        const details = productDiv.querySelector('.details');
-        if (details.style.display === 'block') {
-          details.style.display = 'none';
-          button.textContent = 'Подробнее';
-        } else {
-          details.style.display = 'block';
-          button.textContent = 'Скрыть';
-        }
-      });
-    });
-
 
     // Helper function to update the "toggle all" button text
   function updateToggleAllButtonText() {
@@ -407,14 +393,6 @@
       updateToggleAllButtonText(); // Update the toggle-all button text after individual toggle
     });
   });
-    
-    document.querySelectorAll('.order-btn').forEach(button => {
-      button.addEventListener('click', () => {
-        const productDiv = button.closest('.product');
-        const promoCode = productDiv.querySelector('p:nth-child(3)').textContent.replace(/.*: /, '').trim(); // Извлекаем промокод
-        window.location.href = "https://t.me/privetDasha_bot?start=" + encodeURIComponent(promoCode);
-      });
-    });
 
     // Обработчик для кнопки "Свернуть/Развернуть все"
    / Toggle-all logic (updates all, then updates text)
@@ -441,6 +419,17 @@
       updateToggleAllButtonText(); // Update button label after toggling all
     });
   });
+
+    
+    //Order btn
+    document.querySelectorAll('.order-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const productDiv = button.closest('.product');
+        const promoCode = productDiv.querySelector('p:nth-child(3)').textContent.replace(/.*: /, '').trim(); // Извлекаем промокод
+        window.location.href = "https://t.me/privetDasha_bot?start=" + encodeURIComponent(promoCode);
+      });
+    });
+
 
   // Initialize button text on load
   updateToggleAllButtonText();
