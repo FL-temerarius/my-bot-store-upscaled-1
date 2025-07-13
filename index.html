@@ -56,13 +56,14 @@
     .product-title::before {
       content: '✨'; /* Анимированный эмоджи */
       margin-right: 8px;
+      align-items: top; 
       animation: emoji-spin 2s linear infinite; /* Анимация вращения - 360 */
     }
 
     .product-title::after {
-      content: '🔶👇'; /* Анимированный эмоджи */
+      content: '🔶👇🔸'; /* Анимированный эмоджи */
       margin-right: 8px;
-      animation: rotate 4s linear infinite; /* Анимация вращения - 90 */
+      animation: rotate 6s linear infinite; /* Анимация вращения - 180 */
     }
 
     @keyframes emoji-spin {
@@ -72,7 +73,7 @@
 
     @keyframes rotate {
      from { transform: rotateZ(0deg); }
-     to { transform: rotateZ(90deg); }
+     to { transform: rotateZ(180deg); }
     }
 
     .product-description {
@@ -178,13 +179,13 @@
   <h1>Ваш Фокус ➡️ Стратегия и Развитие</h1>
   <h3>Мои умные таблицы, боты и AI-агенты уже сейчас работают на вас и на ваши высокие цели!</h3>
   
-  <button class="toggle-all-btn" id="toggle-all">Показать все/Свернуть</button>
+  <button class="toggle-all-btn" id="toggle-all">Показать все</button>
   
-  <h3><i>Выберите свой вариант или комбинацию и получите консультацию и личное предложение по промокоду, пока действует акция!</i></h3>
+  <h3><i>Выберите свой вариант и получите консультацию и личное предложение по промокоду, пока действует акция!</i></h3>
 
   
   <div class="product" id="product1">
-    <div class="product-title">⚠️ Контент-план на автопилоте: ИИ-помощник для Telegram и других соцсетей</div>
+    <div class="product-title">⚠️ Контент-план на автопилоте:<br>ИИ-помощник для Telegram и других соцсетей</div>
     <p class="product-description">- Умная таблица - для генерации контента -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
@@ -196,7 +197,7 @@
   </div>
 
   <div class="product" id="product2">
-    <div class="product-title">⚠️ Опросы, которые работают: Собирайте данные и вовлекайте аудиторию</div>
+    <div class="product-title">⚠️ Опросы, которые работают:<br>Собирайте данные, вовлекайте аудиторию!</div>
     <p class="product-description">- Бот для опросов -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
@@ -209,7 +210,7 @@
 
   
   <div class="product" id="product3">
-    <div class="product-title">⚠️ Данные под контролем: Безопасный сбор и анализ данных<br>Интеграция - 3 в 1! 💪 <br> </div>
+    <div class="product-title">⚠️ Данные под контролем:<br>Безопасный сбор и анализ данных. Интеграция - 3 в 1! 💪 <br> </div>
     <p class="product-description">- Яндекс-формы + Телеграм Бот + Таблицы Google -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
@@ -221,20 +222,20 @@
   </div>
 
   <div class="product" id="product4">
-    <div class="product-title">⚠️ Мобильное решение для мониторинга процессов, составления каталогов, фото-архивов 🗄🖼🎨 Фото-каталоги и ведомости без усилий: фото, заметки, ИИ - 3 в 1. Удобный архив! Всегда под рукой.</div>
-    <p class="product-description">- Телеграм Бот + Таблицы Google + Google Disk -</p>
+    <div class="product-title">⚠️ Мобильное решение для мониторинга процессов и составления каталогов.<br>🗄🖼🎨 Медиа-архивы, онлайн-картотеки, ведомости без усилий: фото, заметки + ИИ - 3 в 1.<br>Удобный архив! Всегда под рукой.</div>
+    <p class="product-description">- Телеграм Бот + Таблицы Google + Google перевод (OCR) + Google Disk + ИИ -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
       <p><strong>Как работает:</strong> Идеальное решение для вашего бизнеса или для частного использования. Вы набрасываете в бот картинки, фото, скриншоты и комментарии к ним. Бот сохраняет их в таблицу, а также при необходимости - распознает текст на изображении (включая рукописный) и переводит его на русский или английский языки.</p>
       <p><strong>Промокод:</strong> KatalogBot</p>
-      <button class="order-btn">Хочу! Получить предложение</button>
+      <button class="order-btn">Хочу! Обсудить варианты</button>
       <div class="order-status"></div>
     </div>
   </div>
 
   <div class="product" id="product5">
-    <div class="product-title">⚠️ Самый умный ИИ Переводчик. Забудьте про копипаст и общайтесь на любом языке без границ!</div>
-    <p class="product-description">- Telegram Бот -</p>
+    <div class="product-title">⚠️ Самый умный ИИ Переводчик.<br>Забудьте про копипаст и общайтесь на любом языке без границ!</div>
+    <p class="product-description">- Telegram Бот + ИИ -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
       <p><strong>Как работает:</strong> Отправляете боту текст или картинку, он моментально возвращает перевод на русский или любой выбранный вами язык. Два языка можно установить в избранные и бот будет переводить сообщения без использования дополнительных команд.</p>
@@ -245,8 +246,8 @@
   </div>
 
   <div class="product" id="product6">
-    <div class="product-title">⚠️ Ваш личный коуч в Telegram: Поддержка, рефлексия и вдохновение.</div>
-    <p class="product-description">- Telegram Бот -</p>
+    <div class="product-title">⚠️ Ваш личный коуч в Telegram:<br>Поддержка, рефлексия и вдохновение.</div>
+    <p class="product-description">- Telegram Бот + ИИ -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
       <p><strong>Как работает:</strong> Бережный собеседник. Бот-коуч и поддерживающий психолог 2 в 1. Ответы генерируются с помощью ИИ-агента, обученного помогать, поддерживать, валидировать и контейнировать эмоции собеседника.</p>
@@ -257,8 +258,8 @@
   </div>
 
   <div class="product" id="product7">
-    <div class="product-title"> ⚠️ Бот-трекер. Живите осознанно и держите все под контролем: Простой бот для анализа активности и прогресса.</div>
-    <p class="product-description">- Telegram бот -</p>
+    <div class="product-title"> ⚠️ Бот-трекер.<br>Живите осознанно и держите все под контролем: бот для записей и анализа прогресса.</div>
+    <p class="product-description">- Telegram бот + Таблицы Google -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
       <p><strong>Как работает:</strong> Это самый простой бот. Но в этом его сила: Вы просто пишете ему в сообщениях то, чем вы сейчас занимаетесь или что сделали, и бот записывает это сообщение вместе с датой и временем их получения в таблицу.</p>
@@ -269,7 +270,7 @@
   </div>
 
   <div class="product" id="product8">
-    <div class="product-title">⚠️ Бот для усиления навыков самопрезентации и рефрейминга убеждений. Перезагрузите мышление: Избавьтесь от ограничений с помощью ИИ!</div>
+    <div class="product-title">⚠️ Бот для усиления навыков самопрезентации и рефрейминга убеждений.<br>Перезагрузите мышление: Избавьтесь от ограничений с помощью ИИ!</div>
     <p class="product-description">- Telegram бот -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
@@ -281,7 +282,7 @@
   </div>
 
   <div class="product" id="product9">
-    <div class="product-title">⚠️ Решение для ведения канала с анонимным постингом - Свобода мнений и ценные инсайты!</div>
+    <div class="product-title">⚠️ Решение для ведения канала с анонимным постингом:<br>- Свобода мнений и ценные инсайты!</div>
     <p class="product-description">- Telegram бот + Google таблица -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
@@ -293,7 +294,7 @@
   </div>
 
   <div class="product" id="product10">
-    <div class="product-title">⚠️ Решение для логирования своих каналов и чатов - Полная история канала: Сохраняйте посты, фото и аналитику! </div>
+    <div class="product-title">⚠️ Решение для логирования каналов и чатов.<br>Полная история канала: Сохраняйте посты, фото и аналитику! </div>
     <p class="product-description">- Telegram бот + Google таблица -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
@@ -305,7 +306,7 @@
   </div>
 
   <div class="product" id="product11">
-    <div class="product-title">⚠️ Решение для парсинга публичных каналов в Телеграм. Мониторинг каналов: Будьте в курсе трендов и активности конкурентов.</div>
+    <div class="product-title">⚠️ Решение для парсинга публичных каналов в Телеграм.<br><br>Мониторинг каналов: Будьте в курсе трендов и активности конкурентов.</div>
     <p class="product-description">- Telegram бот + Google таблица -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
@@ -317,7 +318,7 @@
   </div>
 
   <div class="product" id="product12">
-    <div class="product-title">⚠️ Решение для отложенного постинга в Телеграм - Планируйте контент более последовательно: Автоматизируйте, настраивайте, экспериментируйте и анализируйте частоту публикаций в Telegram.</div>
+    <div class="product-title">⚠️ Решение для отложенного постинга в Телеграм.<br><br>- Планируйте контент более последовательно: Автоматизируйте, настраивайте, экспериментируйте и анализируйте частоту публикаций в Telegram.</div>
     <p class="product-description">- Telegram бот + Google таблица + Google Cal + Google Disk -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
@@ -329,7 +330,7 @@
   </div>
 
   <div class="product" id="product13">
-    <div class="product-title">⚠️ Бот-Бухгалтер - Анализ финансов в Telegram: Простой и удобный учет приходов/расходов - всегда под рукой!</div>
+    <div class="product-title">⚠️ Бот-Бухгалтер - Анализ финансов в Telegram.<br><br>Простой и удобный учет приходов/расходов - всегда под рукой!</div>
     <p class="product-description">- Telegram бот + Google таблица -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
@@ -341,7 +342,7 @@
   </div>
 
   <div class="product" id="product14">
-    <div class="product-title">⚠️ Личный Шеф-повар. Секреты высокой кухни у вас на ладони - Вдохновение, Рецепты и Лайфхаки на каждый день!</div>
+    <div class="product-title">⚠️ Личный Шеф-повар. Секреты высокой кухни у вас на ладони - <br><br>Вдохновение, Рецепты и Лайфхаки на каждый день!</div>
     <p class="product-description">- Telegram бот -</p>
     <button class="toggle-details-btn">Подробнее</button>
     <div class="details">
@@ -366,7 +367,7 @@
 
   <script>
 
-   /* // Helper function to update the "toggle all" button text
+   // Helper function to update the "toggle all" button text
   function updateToggleAllButtonText() {
     const products = document.querySelectorAll('.product');
     const areAllOpen = Array.from(products).every(product => {
@@ -377,7 +378,7 @@
     document.querySelectorAll('.toggle-all-btn').forEach(btn => {
       btn.textContent = areAllOpen ? 'Свернуть все' : 'Показать все';
     });
-  }*/
+  }
 
   // Toggle details for individual product
   document.querySelectorAll('.toggle-details-btn').forEach(button => {
@@ -391,7 +392,7 @@
         details.style.display = 'block';
         button.textContent = 'Скрыть';
       }
-      //updateToggleAllButtonText(); // Update the toggle-all button text after individual toggle
+      updateToggleAllButtonText(); // Update the toggle-all button text after individual toggle
     });
   });
 
@@ -417,7 +418,7 @@
           toggleButton.textContent = 'Подробнее';
         }
       });
-      //updateToggleAllButtonText(); // Update button label after toggling all
+      updateToggleAllButtonText(); // Update button label after toggling all
     });
   });
 
@@ -443,9 +444,9 @@
     
     //Order btn
     document.querySelectorAll('.order-btn').forEach(button => {
-      button.addEventListener('click', async () => {
+      button.addEventListener('click', () => {
         const productDiv = button.closest('.product');
-        const promoCode = productDiv.querySelector('.details p:nth-child(3)').textContent.replace(/.*: /, '').trim(); // Извлекаем промокод
+        const promoCode = productDiv.querySelector('.details p:nth-child(2)').textContent.replace(/.*: /, '').trim(); // Извлекаем промокод
         try {
         // Here, instead of calling the bot via API, I give the client a referral link to it (and the bot script already contains a proper reaction to it):
         window.location.href = "https://t.me/privetDasha_bot?start=" + encodeURIComponent(promoCode);
@@ -455,7 +456,9 @@
        }
       });
     });
-          /*//Another ver for Order btn
+    
+    /*
+          //Another ver for Order btn
           document.querySelectorAll('.order-btn').forEach(button => {
             button.addEventListener('click', () => {
               const productDiv = button.closest('.product');
@@ -464,10 +467,11 @@
               const promoCode = promoCodeP ? promoCodeP.textContent.replace(/.*: /, '').trim() : '';
               window.location.href = "https://t.me/privetDasha_bot?start=" + encodeURIComponent(promoCode);
             });
-          });*/
+          });
+    */
 
   // Initialize button text on load
- /* updateToggleAllButtonText();*/
+// updateToggleAllButtonText();
     //});
     
   </script>
